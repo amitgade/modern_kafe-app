@@ -1,3 +1,3 @@
 # modern_kafe
-Restaurant Order Management Application
+The menu and online ordering system for Modern Kafe
 
