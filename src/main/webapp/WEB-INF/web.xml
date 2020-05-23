@@ -15,19 +15,29 @@
 		<servlet-class>com.smartcode.servlet.HelloWorldServlet</servlet-class>
 	</servlet>
 	
-	<servlet-mapping>
-		<servlet-name>HelloWorldServlet</servlet-name>
-		<url-pattern>/hello.html</url-pattern>
-	</servlet-mapping>
-	
 	<servlet>
 		<servlet-name>ViewMenuServlet</servlet-name>
 		<servlet-class>com.smartcode.servlet.ViewMenuServlet</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>MenuSearchServlet</servlet-name>
+		<servlet-class>com.smartcode.servlet.MenuSearchServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>HelloWorldServlet</servlet-name>
+		<url-pattern>/hello.html</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>ViewMenuServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern></url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>MenuSearchServlet</servlet-name>
+		<url-pattern>/searchResults.html</url-pattern>
 	</servlet-mapping>
 	
 	
