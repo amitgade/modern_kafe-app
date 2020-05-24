@@ -1,44 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
-    version="2.4">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
 
-    <display-name>Modern Kafe</display-name>
-    <description>
+	<display-name>Modern Kafe</display-name>
+	<description>
         The menu and online ordering system for Modern Kafe
     </description>
-
 
 	<servlet>
 		<servlet-name>HelloWorldServlet</servlet-name>
 		<servlet-class>com.smartcode.servlet.HelloWorldServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>ViewMenuServlet</servlet-name>
 		<servlet-class>com.smartcode.servlet.ViewMenuServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>MenuSearchServlet</servlet-name>
 		<servlet-class>com.smartcode.servlet.MenuSearchServlet</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>OrderServlet</servlet-name>
+		<servlet-class>com.smartcode.servlet.OrderServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>OrderReceivedServlet</servlet-name>
+		<servlet-class>com.smartcode.servlet.OrderReceivedServlet</servlet-class>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>HelloWorldServlet</servlet-name>
 		<url-pattern>/hello.html</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>ViewMenuServlet</servlet-name>
 		<url-pattern></url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>MenuSearchServlet</servlet-name>
 		<url-pattern>/searchResults.html</url-pattern>
 	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>OrderServlet</servlet-name>
+		<url-pattern>/order.html</url-pattern>
+	</servlet-mapping>
 	
+	<servlet-mapping>
+		<servlet-name>OrderReceivedServlet</servlet-name>
+		<url-pattern>/orderReceived.html</url-pattern>
+	</servlet-mapping>
 	
+
 </web-app> 

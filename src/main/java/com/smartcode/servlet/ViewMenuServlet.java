@@ -21,7 +21,7 @@ public class ViewMenuServlet extends HttpServlet {
 		MenuDataService menuDataService = new MenuDataService();
 		List<MenuItem> menuitems = menuDataService.getFullMenu();
 
-		out.println("<html><bosy><h1>Modern Kafe</h1><ul>");
+		out.println("<html><body><h1>Modern Kafe</h1><ul>");
 		out.println("<h2>Menu</h2>");
 
 		for (MenuItem menuItem : menuitems) {
