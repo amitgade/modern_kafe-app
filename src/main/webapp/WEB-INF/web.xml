@@ -30,6 +30,11 @@
 	</servlet>
 	
 	<servlet>
+		<servlet-name>ThankYouServlet</servlet-name>
+		<servlet-class>com.smartcode.servlet.ThankYouServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
 		<servlet-name>OrderReceivedServlet</servlet-name>
 		<servlet-class>com.smartcode.servlet.OrderReceivedServlet</servlet-class>
 	</servlet>
@@ -57,6 +62,11 @@
 	<servlet-mapping>
 		<servlet-name>OrderReceivedServlet</servlet-name>
 		<url-pattern>/orderReceived.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ThankYouServlet</servlet-name>
+		<url-pattern>/thankYou.html</url-pattern>
 	</servlet-mapping>
 	
 
