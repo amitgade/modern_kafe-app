@@ -107,8 +107,21 @@
 		</auth-constraint>
 	</security-constraint>
 
-	<login-config>
+
+	<!-- BASIC Authentication  -->
+	<!-- <login-config>
 		<auth-method>BASIC</auth-method>
 		<realm-name>Modern Kafe</realm-name>
+	</login-config> -->
+	
+	
+	<!-- FORM based authentication -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+			<form-login-config>
+				<form-login-page>/login.html</form-login-page>
+				<form-error-page>/failed-login.html</form-error-page>
+			</form-login-config>
 	</login-config>
+	
 </web-app> 
