@@ -6,12 +6,16 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class ThankYouServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		String total = req.getParameter("total");
-		
+
+		HttpSession session = req.getSession();
+
+		Double total = (Double) session.getAttribute("total");
+
 		PrintWriter out = resp.getWriter();
 		resp.setContentType("text/html");
 		out.println("<html><body><h1>Modern Kafe</h1>");
@@ -22,5 +26,5 @@ public class ThankYouServlet extends HttpServlet {
 		out.println("</body></html>");
 		out.close();
 	}
-	
+
 }

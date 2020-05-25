@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smartcode.data.MenuDataService;
 
@@ -29,7 +30,13 @@ public class OrderReceivedServlet extends HttpServlet {
 		System.out.println("A new order has been received");
 
 		Double total = menuDataService.getOrderTotal();
-		
-		response.sendRedirect("thankYou.html?total=" + total);
+
+		HttpSession session = request.getSession();
+
+		session.setAttribute("total", total);
+
+		String redirectURL = "/thankYou.html";
+		redirectURL = response.encodeURL(redirectURL);
+		response.sendRedirect(redirectURL);
 	}
 }
