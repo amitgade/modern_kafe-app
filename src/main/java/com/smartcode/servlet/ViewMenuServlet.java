@@ -27,11 +27,11 @@ public class ViewMenuServlet extends HttpServlet {
 		for (MenuItem menuItem : menuitems) {
 			out.println("<li>" + menuItem + "</li>");
 		}
-		
+
 		out.println("</ul>");
 		out.println("<a href='searchResults.html?searchTerm=vegetable' >View all of our vegegable dishes</a>");
 		out.println("</body></html>");
-		
+
 		out.close();
 	}
 }
