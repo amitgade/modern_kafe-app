@@ -9,119 +9,32 @@
         The menu and online ordering system for Modern Kafe
     </description>
 
-	<servlet>
-		<servlet-name>HelloWorldServlet</servlet-name>
-		<servlet-class>com.smartcode.servlet.HelloWorldServlet</servlet-class>
-	</servlet>
-
-	<servlet>
-		<servlet-name>ViewMenuServlet</servlet-name>
-		<servlet-class>com.smartcode.servlet.ViewMenuServlet</servlet-class>
-	</servlet>
-
-	<servlet>
-		<servlet-name>MenuSearchServlet</servlet-name>
-		<servlet-class>com.smartcode.servlet.MenuSearchServlet</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>OrderServlet</servlet-name>
-		<servlet-class>com.smartcode.servlet.OrderServlet</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>ThankYouServlet</servlet-name>
-		<servlet-class>com.smartcode.servlet.ThankYouServlet</servlet-class>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>OrderReceivedServlet</servlet-name>
-		<servlet-class>com.smartcode.servlet.OrderReceivedServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>HelloWorldServlet</servlet-name>
-		<url-pattern>/hello.html</url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>ViewMenuServlet</servlet-name>
-		<url-pattern></url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>MenuSearchServlet</servlet-name>
-		<url-pattern>/searchResults.html</url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>OrderServlet</servlet-name>
-		<url-pattern>/order.html</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>OrderReceivedServlet</servlet-name>
-		<url-pattern>/orderReceived.html</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>ThankYouServlet</servlet-name>
-		<url-pattern>/thankYou.html</url-pattern>
-	</servlet-mapping>
-	
 	<session-config>
 		<session-timeout>120</session-timeout>
 	</session-config>
-	
+
 	<!-- Authorization -->
 	<!-- security role is optional for tomcat server -->
 	<security-role>
 		<role-name>user</role-name>
 	</security-role>
-	
+
 	<security-role>
 		<role-name>admin</role-name>
 	</security-role>
-	
-	<security-constraint>
 
-		<web-resource-collection>
-			<web-resource-name>order pages</web-resource-name>
-			<url-pattern>/order.html</url-pattern>
-			<url-pattern>/thankYou.html</url-pattern>
-		</web-resource-collection>
-
-		<auth-constraint>
-			<role-name>user</role-name>
-		</auth-constraint>
-	</security-constraint>
-
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>staff pages</web-resource-name>
-			<url-pattern>/admin/*</url-pattern>
-		</web-resource-collection>
-
-		<auth-constraint>
-			<role-name>admin</role-name>
-		</auth-constraint>
-	</security-constraint>
+	<!-- BASIC Authentication -->
+	<!-- <login-config> <auth-method>BASIC</auth-method> <realm-name>Modern 
+		Kafe</realm-name> </login-config> -->
 
 
-	<!-- BASIC Authentication  -->
-	<!-- <login-config>
-		<auth-method>BASIC</auth-method>
-		<realm-name>Modern Kafe</realm-name>
-	</login-config> -->
-	
-	
 	<!-- FORM based authentication -->
 	<login-config>
 		<auth-method>FORM</auth-method>
-			<form-login-config>
-				<form-login-page>/login.html</form-login-page>
-				<form-error-page>/failed-login.html</form-error-page>
-			</form-login-config>
+		<form-login-config>
+			<form-login-page>/login.html</form-login-page>
+			<form-error-page>/failed-login.html</form-error-page>
+		</form-login-config>
 	</login-config>
-	
+
 </web-app> 
