@@ -28,6 +28,9 @@ public class ThankYouServlet extends HttpServlet {
 		
 		req.setAttribute("total", total);
 		
+		// if in case you want to format
+//		req.setAttribute("currency", "USD");
+		
 		// we are done with business logic; now hand it over to jsp for display
 		ServletContext context = getServletContext();
 		RequestDispatcher dispatch = context.getRequestDispatcher("/thankYou.jsp");

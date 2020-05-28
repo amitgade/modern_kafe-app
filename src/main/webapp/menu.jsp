@@ -11,6 +11,15 @@
 		</c:forEach>
 	</ul>
 
+	<!-- To Display Menus which are < $10  -->
+	<%-- <ul>
+		<c:forEach items="${menuItems}" var="menuItem">
+			<c:if test="${menuItem.price < 10}">
+				<li>${menuItem} - ${menuItem.description}</li>	
+			</c:if>
+		</c:forEach>
+	</ul> --%>
+
 	<jsp:include page="/footer.jsp"/>
 
 </body>
