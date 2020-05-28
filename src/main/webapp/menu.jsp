@@ -1,22 +1,14 @@
-<%@ page import="com.smartcode.domain.MenuItem"%>
-<%@ page import="java.util.List"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
 <body>
-	<jsp:include page="/header.jsp"/>
+	<jsp:include page="/header.jsp" />
 	<h2>Menu</h2>
+
 	<ul>
-		<%
-		
-		List<MenuItem> menuItems = (List<MenuItem>) request.getAttribute("menuItems");
-		
-		for (MenuItem menuItem : menuItems) {
-		%>
-			<li> <%= menuItem %> </li>
-		<%
-		}
-		%>
+		<c:forEach items="${menuItems}" var="menuItem">
+			<li>${menuItem} - ${menuItem.description}</li>
+		</c:forEach>
 	</ul>
 
 	<jsp:include page="/footer.jsp"/>
