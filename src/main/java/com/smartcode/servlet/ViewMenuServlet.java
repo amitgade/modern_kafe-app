@@ -13,7 +13,7 @@ import com.smartcode.data.MenuDao;
 import com.smartcode.data.MenuDaoFactory;
 import com.smartcode.domain.MenuItem;
 
-@WebServlet("")
+//@WebServlet("")
 public class ViewMenuServlet extends HttpServlet {
 
 	public void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
