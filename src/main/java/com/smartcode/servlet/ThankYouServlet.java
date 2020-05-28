@@ -1,8 +1,9 @@
 package com.smartcode.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.HttpConstraint;
 import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.WebServlet;
@@ -15,21 +16,22 @@ import javax.servlet.http.HttpSession;
 @ServletSecurity(@HttpConstraint(rolesAllowed = {"user"}))
 public class ThankYouServlet extends HttpServlet {
 
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
 		HttpSession session = req.getSession();
 
 		Double total = (Double) session.getAttribute("total");
 
-		PrintWriter out = resp.getWriter();
-		resp.setContentType("text/html");
-		out.println("<html><body><h1>Modern Kafe</h1>");
-		out.println("<h2>Order your food</h2>");
-
-		out.println("Thank you - your order has been received. You need to pay $" + total);
-
-		out.println("</body></html>");
-		out.close();
+		if (total == null) {
+			resp.sendRedirect("/order.html");
+		}
+		
+		req.setAttribute("total", total);
+		
+		// we are done with business logic; now hand it over to jsp for display
+		ServletContext context = getServletContext();
+		RequestDispatcher dispatch = context.getRequestDispatcher("/thankYou.jsp");
+		dispatch.forward(req, resp);
 	}
 
 }
