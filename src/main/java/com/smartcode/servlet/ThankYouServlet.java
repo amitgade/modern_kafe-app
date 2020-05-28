@@ -36,6 +36,7 @@ public class ThankYouServlet extends HttpServlet {
 		
 		req.setAttribute("total", total);
 		req.setAttribute("status", status);
+		req.setAttribute("id", orderId);
 		
 		// if in case you want to format
 //		req.setAttribute("currency", "USD");
