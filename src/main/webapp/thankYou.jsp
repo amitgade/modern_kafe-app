@@ -6,11 +6,13 @@
 	<jsp:include page="/header.jsp" />
 	<h2>Order your food:</h2>
 
-	Thank you - your order has been received. You need to pay $ ${total}
+	<p>Thank you - your order has been received. You need to pay $ ${total}</p>
 	
 	<!-- In case you eant to format using fmt taglib -->
 	<%-- Thank you - your order has been received. You need to pay 
 	<fmt:formatNumber value="${total}" type="currency" currencyCode="${currency}"/> --%>
+	
+	<p>The current status of your order is : ${status}</p>
 	
 	<jsp:include page="/footer.jsp" />
 
