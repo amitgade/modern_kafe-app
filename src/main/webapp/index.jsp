@@ -11,7 +11,7 @@
 
 <html>
 <body>
-	<h1>Modern Kafe</h1>
+	<jsp:include page="/header.jsp"/>
 	<h2>Menu</h2>
 	<ul>
 		<%
@@ -23,8 +23,7 @@
 		%>
 	</ul>
 
-	<a href='searchResults.html?searchTerm=vegetable'>View all of our vegetable dishes</a>
-	<a href='order.html'>Place an order for food</a>
+	<jsp:include page="/footer.jsp"/>
 
 </body>
 </html>
