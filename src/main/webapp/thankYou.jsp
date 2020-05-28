@@ -8,17 +8,22 @@
 		var request = new XMLHttpRequest();
 		request.onreadystatechange = function() {
 			if (this.readyState == 4) {
-				document.getElementById("status").innerHTML = this.responseText;
+				/* document.getElementById("status").innerHTML = this.responseText; */
+				var json = JSON.parse(this.responseText);
+				document.getElementById("status").innerHTML = json.status;
+				document.getElementById("time").innerHTML = "Last updated : " + json.time;
 			}
 		}
 		request.open("GET", "/updatedStatus?id=${id}", true)
 		request.send();
 	}
 	
-	<%-- function that update status every 2 seconds --%>
-	window.setInterval(function() {
-		updateStatus();
-	}, 2000)
+	/* function that update status every 2 seconds */
+	window.setInterval( 
+			function () {
+				updateStatus();
+			}
+			, 2000)
 
 	</script>
 </head>
@@ -33,10 +38,9 @@
 	<%-- Thank you - your order has been received. You need to pay 
 	<fmt:formatNumber value="${total}" type="currency" currencyCode="${currency}"/> --%>
 
-	<p>
-		The current status of your order is : <span id="status">${status}</span>
-		<input type="button" value="refresh status" onclick="updateStatus()" />
-	</p>
+	<p>The current status of your order is : <span id="status">${status}</span> <input type="button" value="refresh status" onclick="updateStatus()"/> </p>
+	
+	<p id="time"></p>
 
 	<jsp:include page="/footer.jsp" />
 
