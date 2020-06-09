@@ -49,7 +49,8 @@ public class KitchenAsyncTask implements Runnable {
 			throw new RuntimeException(e);
 		}
 		response.setContentType("text/html");
-		out.println("<p><strong>Next Order:</string><br/>" + order.toString() + "</p>");
+		out.println("<p><strong>Next Order:</string><br/>");
+		out.println("Order#" + order.getId() + "<br>" + order.toString() + "</p>");
 		out.close();
 		
 		asyncContext.complete();
