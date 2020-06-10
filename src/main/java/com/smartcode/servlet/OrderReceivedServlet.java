@@ -41,7 +41,7 @@ public class OrderReceivedServlet extends HttpServlet {
 		// Asynchronous call
 		KitchenDisplaySessionHandler handler = KitchenDisplaySessionHandlerFactory.getHandler();
 		handler.newOrder(order);
-
+		
 		// redirect to thank you page upon order reception
 		HttpSession session = request.getSession();
 

@@ -43,4 +43,11 @@ public class KitchenDisplaySessionHandler {
 		sendMessage(json);
 	}
 
+	public void amendOrder(Order order) {
+		JSONObject json = new JSONObject();
+		json.append("id", order.getId().toString());
+		json.append("action", "remove");
+		sendMessage(json);
+		newOrder(order);
+	}
 }
