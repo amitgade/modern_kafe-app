@@ -16,7 +16,7 @@
 	<url>http://restaurant.smartcode.com</url>
 
 	<properties>
-		<tomcat.version>8.5.28</tomcat.version>
+		<tomcat.version>8.0.28</tomcat.version>
 	</properties>
 
 	<build>
@@ -106,6 +106,12 @@
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20200518</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-websocket</artifactId>
+			<version>8.0.28</version>
 		</dependency>
 
 	</dependencies>

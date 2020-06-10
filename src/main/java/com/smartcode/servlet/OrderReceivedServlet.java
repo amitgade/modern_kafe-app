@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import com.smartcode.data.MenuDao;
 import com.smartcode.data.MenuDaoFactory;
 import com.smartcode.domain.Order;
+import com.smartcode.websockets.KitchenDisplaySessionHandler;
+import com.smartcode.websockets.KitchenDisplaySessionHandlerFactory;
 
 @WebServlet("/orderReceived.html")
 public class OrderReceivedServlet extends HttpServlet {
@@ -29,14 +31,18 @@ public class OrderReceivedServlet extends HttpServlet {
 				if (q > 0) {
 					menuDao.addToOrder(order.getId(), menuDao.getItem(i), q);
 					order.addToOrder(menuDao.getItem(i), q);
-				}	
+				}
 			} catch (NumberFormatException nfe) {
 				// that's fine it just means there wasn't an order for this item
 			}
 		}
 
-		System.out.println("A new order has been received");
+		// Add new Order to handler that will display on kitchen management page ...
+		// Asynchronous call
+		KitchenDisplaySessionHandler handler = KitchenDisplaySessionHandlerFactory.getHandler();
+		handler.newOrder(order);
 
+		// redirect to thank you page upon order reception
 		HttpSession session = request.getSession();
 
 		session.setAttribute("orderId", order.getId());
