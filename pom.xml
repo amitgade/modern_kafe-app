@@ -16,7 +16,7 @@
 	<url>http://restaurant.smartcode.com</url>
 
 	<properties>
-		<tomcat.version>8.5.61</tomcat.version>
+		<tomcat.version>8.5.63</tomcat.version>
 	</properties>
 
 	<build>
